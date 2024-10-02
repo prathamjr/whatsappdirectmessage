@@ -36,12 +36,18 @@
         button:hover {
             background-color: #128C7E;
         }
+        .instruction {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>WhatsApp Link Generator</h1>
-        <input type="tel" id="phoneNumber" placeholder="Enter phone number" required>
+        <p class="instruction">Please include the country code before the phone number (e.g., +1 for USA)</p>
+        <input type="tel" id="phoneNumber" placeholder="Enter phone number with country code" required>
         <button onclick="openWhatsApp()">Open WhatsApp Chat</button>
     </div>
 
@@ -52,7 +58,7 @@
                 const whatsappLink = `https://wa.me/${phoneNumber}`;
                 window.open(whatsappLink, '_blank');
             } else {
-                alert('Please enter a valid phone number');
+                alert('Please enter a valid phone number with country code');
             }
         }
     </script>
