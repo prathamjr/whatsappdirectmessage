@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Link Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        input, button {
+            font-size: 1rem;
+            padding: 0.5rem;
+            margin: 0.5rem 0;
+        }
+        button {
+            background-color: #25D366;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #128C7E;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>WhatsApp Link Generator</h1>
+        <input type="tel" id="phoneNumber" placeholder="Enter phone number" required>
+        <button onclick="openWhatsApp()">Open WhatsApp Chat</button>
+    </div>
+
+    <script>
+        function openWhatsApp() {
+            const phoneNumber = document.getElementById('phoneNumber').value.replace(/\D/g, '');
+            if (phoneNumber) {
+                const whatsappLink = `https://wa.me/${phoneNumber}`;
+                window.open(whatsappLink, '_blank');
+            } else {
+                alert('Please enter a valid phone number');
+            }
+        }
+    </script>
+</body>
+</html>
